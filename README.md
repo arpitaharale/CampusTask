@@ -102,37 +102,23 @@
 
 # 
 
-# \## 7. User Testing
+## 7. User Testing
 
-# 
+I showed CampusTask to two people who had not seen the application before.
 
-# User testing with two people who had not seen the application before is planned.
+Both testers were asked to add a college task, find it in the task list, mark it as completed, and find the completed task.
 
-# 
+- Tester 1 completed the task successfully without difficulty.
+- Tester 2 completed the task successfully without difficulty.
+- No major usability problems were found.
+- No major changes were required after testing.
+- Login required in future
 
-# The testing task will be:
+## 8. AI Usage
 
-# 
+AI assistance was used during development to understand implementation steps, debug code, improve the CSS design, and get suggestions for keyboard accessibility.
 
-# "Add a college task, find it in the task list, mark it as completed, and find the completed task."
-
-# 
-
-# Their feedback and the improvements made based on the feedback will be added after the testing is completed.
-
-# 
-
-# \## 8. AI Usage
-
-# 
-
-# AI assistance was used during development to understand implementation steps, debug code, improve the CSS design, and get suggestions for keyboard accessibility.
-
-# 
-
-# The suggestions were tested and adapted to the actual CampusTask application.
-
-# 
+One issue with the AI-generated guidance was related to the CSS file structure/path. The CSS file was initially not being loaded correctly, so the website appeared without the intended styling. I checked the project folder structure, corrected the CSS file location/path, and verified that the styling worked correctly.
 
 # \## 9. What I Did Not Build
 
