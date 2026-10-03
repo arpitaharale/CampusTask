@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusTask - Add Task</title>
+
+  <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">
+    Skip to main content
+</a>
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="/" class="logo">CampusTask</a>
+
+        <nav aria-label="Main navigation">
+            <a href="/">Dashboard</a>
+            <a href="/tasks">All Tasks</a>
+            <a href="/add-task" aria-current="page">Add Task</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="page-heading">
+
+        <p class="small-title">CREATE TASK</p>
+
+        <h1>Add a New Task</h1>
+
+        <p>
+            Add an assignment, practical, project or exam.
+        </p>
+
+    </section>
+
+
+    <form method="POST" class="form-card">
+
+
+        <div class="form-group">
+
+            <label for="title">
+                Task Title
+            </label>
+
+            <input
+                id="title"
+                type="text"
+                name="title"
+                placeholder="Example: DBMS Assignment"
+                required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="description">
+                Description
+            </label>
+
+            <textarea
+                id="description"
+                name="description"
+                rows="4"
+                placeholder="Enter task details"></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="deadline">
+                Deadline
+            </label>
+
+            <input
+                id="deadline"
+                type="date"
+                name="deadline"
+                required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="priority">
+                Priority
+            </label>
+
+            <select id="priority" name="priority">
+
+                <option value="High">
+                    High
+                </option>
+
+                <option value="Medium" selected>
+                    Medium
+                </option>
+
+                <option value="Low">
+                    Low
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="category">
+                Category
+            </label>
+
+            <select id="category" name="category">
+
+                <option value="Assignment">
+                    Assignment
+                </option>
+
+                <option value="Practical">
+                    Practical
+                </option>
+
+                <option value="Project">
+                    Project
+                </option>
+
+                <option value="Exam">
+                    Exam
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button type="submit" class="button primary-button">
+            Add Task
+        </button>
+
+    </form>
+
+</main>
+
+</body>
+
+</html>

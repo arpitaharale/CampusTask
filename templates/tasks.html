@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusTask - All Tasks</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">
+    Skip to main content
+</a>
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="/" class="logo">CampusTask</a>
+
+        <nav aria-label="Main navigation">
+            <a href="/">Dashboard</a>
+            <a href="/tasks" aria-current="page">All Tasks</a>
+            <a href="/add-task">Add Task</a>
+        </nav>
+
+    </div>
+
+</header>
+
+<main id="main-content" class="container"></main>
+
+    <section class="page-heading">
+
+        <p class="small-title">YOUR WORKSPACE</p>
+
+        <h1>All Tasks</h1>
+
+        <p>
+            View and manage all your college tasks.
+        </p>
+
+    </section>
+
+
+    <section class="filter-section" aria-label="Task filters">
+
+        <a href="/tasks" class="filter-button">
+            All
+        </a>
+
+        <a href="/tasks?status=Pending" class="filter-button">
+            Pending
+        </a>
+
+        <a href="/tasks?status=Completed" class="filter-button">
+            Completed
+        </a>
+
+    </section>
+
+
+    <section class="task-list" aria-label="Task list">
+
+        {% if tasks %}
+
+            {% for task in tasks %}
+
+            <article class="task-card">
+
+                <div class="task-top">
+
+                    <h2>{{ task["title"] }}</h2>
+
+                    <span class="priority {{ task['priority']|lower }}">
+                        {{ task["priority"] }}
+                    </span>
+
+                </div>
+
+
+                <p class="description">
+                    {{ task["description"] }}
+                </p>
+
+
+                <div class="task-details">
+
+                    <span>
+                        Deadline: {{ task["deadline"] }}
+                    </span>
+
+                    <span>
+                        Category: {{ task["category"] }}
+                    </span>
+
+                    <span>
+                        Status: {{ task["status"] }}
+                    </span>
+
+                </div>
+
+
+                <div class="task-actions">
+
+                    {% if task["status"] == "Pending" %}
+
+                    <a
+                        href="/complete/{{ task['id'] }}"
+                        class="button complete-button">
+                        ✓ Mark Complete
+                    </a>
+
+                    {% else %}
+
+                    <span class="completed-label">
+                        ✓ Completed
+                    </span>
+
+                    {% endif %}
+
+
+                    <a
+                        href="/delete/{{ task['id'] }}"
+                        class="button delete-button">
+                        Delete
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="empty-state">
+
+                <h2>No tasks found</h2>
+
+                <p>
+                    You don't have any tasks in this section.
+                </p>
+
+                <a href="/add-task" class="button primary-button">
+                    + Add Task
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</main>
+
+</body>
+
+</html>

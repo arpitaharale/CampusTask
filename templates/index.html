@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusTask - Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">
+    Skip to main content
+</a>
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="/" class="logo">CampusTask</a>
+
+        <nav aria-label="Main navigation">
+            <a href="/" aria-current="page">Dashboard</a>
+            <a href="/tasks">All Tasks</a>
+            <a href="/add-task">Add Task</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main id="main-content" class="container">
+
+    <section class="page-heading">
+
+        <p class="small-title">COLLEGE TASK MANAGER</p>
+
+        <h1>Manage your college life.</h1>
+
+        <p>
+            Keep assignments, projects and deadlines organized in one place.
+        </p>
+
+        <br>
+
+        <a href="/add-task" class="button primary-button">
+            + Add New Task
+        </a>
+
+    </section>
+
+
+    <section aria-labelledby="summary-heading">
+
+        <h2 id="summary-heading">Task Overview</h2>
+
+        <div class="stats">
+
+            <article class="stat-card">
+
+                <h2>Total Tasks</h2>
+
+                <p class="stat-number">
+                    {{ total }}
+                </p>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <h2>Pending</h2>
+
+                <p class="stat-number">
+                    {{ pending }}
+                </p>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <h2>Completed</h2>
+
+                <p class="stat-number">
+                    {{ completed }}
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section style="margin-top: 40px;">
+
+        <h2>Quick Actions</h2>
+
+        <a href="/add-task" class="button primary-button">
+            Add Task
+        </a>
+
+        <a href="/tasks" class="button filter-button">
+            View All Tasks
+        </a>
+
+    </section>
+
+</main>
+
+</body>
+
+</html>
